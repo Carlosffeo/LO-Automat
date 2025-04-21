@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Last Oasis Resource Calculator</title>
+    <title>Last Oasis Resource Calculator | Nomadic Survival MMO</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logos/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="container">
@@ -152,8 +153,18 @@
                 <div class="resources-list" id="resources-list">
                     <!-- Resources will be displayed here -->
                 </div>
+                <div class="resource-actions">
+                    <button id="copy-resources-btn" class="copy-btn" disabled>
+                        <span class="copy-icon">📋</span> Copy to Clipboard
+                    </button>
+                    <span id="copy-feedback" class="copy-feedback"></span>
+                </div>
             </div>
         </div>
+        
+        <footer class="footer">
+            <p>Last Oasis Resource Calculator | Unofficial fan-made tool | Not affiliated with Donkey Crew</p>
+        </footer>
     </div>
     
     <script src="script.js"></script>

@@ -139,6 +139,11 @@ const categories = document.querySelectorAll('.category');
 const checkboxes = document.querySelectorAll('.item-checkbox');
 const quantities = document.querySelectorAll('.item-quantity');
 const items = document.querySelectorAll('.item');
+const copyResourcesBtn = document.getElementById('copy-resources-btn');
+const copyFeedback = document.getElementById('copy-feedback');
+
+// Store current resources for copy functionality
+let currentResources = {};
 
 // Function to calculate resources
 function calculateResources() {
@@ -165,7 +170,14 @@ function calculateResources() {
         }
     });
     
+    // Store current resources for copy functionality
+    currentResources = totalResources;
+    
+    // Update UI
     displayResources(totalResources);
+    
+    // Enable or disable copy button based on whether there are resources
+    copyResourcesBtn.disabled = Object.keys(totalResources).length === 0;
 }
 
 // Function to display resources on the interface
@@ -191,6 +203,41 @@ function displayResources(resources) {
         `;
         resourcesList.appendChild(resourceItem);
     });
+}
+
+// Function to copy resources to clipboard
+function copyResourcesToClipboard() {
+    if (Object.keys(currentResources).length === 0) {
+        return;
+    }
+    
+    // Format the resources as text
+    const resourcesText = Object.entries(currentResources)
+        .sort((a, b) => resourceNames[a[0]].localeCompare(resourceNames[b[0]]))
+        .map(([resource, amount]) => `${resourceNames[resource] || resource}: ${amount}`)
+        .join('\n');
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(resourcesText)
+        .then(() => {
+            // Show success message
+            copyFeedback.textContent = 'Copied!';
+            copyFeedback.classList.add('show');
+            
+            // Hide the message after 2 seconds
+            setTimeout(() => {
+                copyFeedback.classList.remove('show');
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy resources: ', err);
+            copyFeedback.textContent = 'Copy failed';
+            copyFeedback.classList.add('show');
+            
+            setTimeout(() => {
+                copyFeedback.classList.remove('show');
+            }, 2000);
+        });
 }
 
 // Function to reset all fields
@@ -223,6 +270,12 @@ function resetFields() {
     items.forEach(item => {
         item.classList.remove('hide');
     });
+    
+    // Disable copy button
+    copyResourcesBtn.disabled = true;
+    
+    // Clear current resources
+    currentResources = {};
 }
 
 // Function to load a predefined loadout
@@ -355,6 +408,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Reset button
     resetBtn.addEventListener('click', resetFields);
+    
+    // Copy resources button
+    copyResourcesBtn.addEventListener('click', copyResourcesToClipboard);
     
     // Link checkboxes with quantity fields
     checkboxes.forEach((checkbox, index) => {
