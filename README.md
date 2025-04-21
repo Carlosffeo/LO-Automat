@@ -7,8 +7,8 @@ A simple static web application for calculating resources needed in the game Las
 This is a static HTML/CSS/JavaScript site with no build step required. Deployment should be straightforward:
 
 1. Clone the repository
-2. Deploy the files directly to a web server
-3. No build process or server-side code is needed
+2. Deploy the files directly to a web server or a static site host like Netlify or GitHub Pages.
+3. No build process, server-side code, or Node.js dependencies are needed.
 
 ## Structure
 
@@ -19,10 +19,12 @@ This is a static HTML/CSS/JavaScript site with no build step required. Deploymen
 
 ## Netlify Configuration
 
-This project is configured for direct deployment on Netlify using the following files:
+This project is configured for direct deployment on Netlify using:
 
-- `netlify.toml` - Netlify configuration
-- `package.json` - Node.js version specification (for Netlify)
+- `netlify.toml` - Netlify configuration (specifies publish directory and no build command).
+- `_redirects` - Basic redirect rule for handling paths.
+
+Note: A `package.json` file is not needed for this project.
 
 ## Features
 
@@ -43,16 +45,12 @@ This project is configured for direct deployment on Netlify using the following 
 5. Use "Reset" to clear all selections
 6. You can save your custom loadouts or load predefined loadouts
 
-## Installation
-
-No installation required. Simply download all files and open `index.html` in your browser.
-
 ## Hosting Options
 
 To share the calculator with friends, you can:
 
 1. **GitHub Pages**: Upload the project to a GitHub repository and enable GitHub Pages.
-2. **Netlify**: Drag and drop the project folder to Netlify Drop.
+2. **Netlify**: Connect your GitHub repository to Netlify. The `netlify.toml` file should handle the configuration.
 3. **Vercel**: Upload the project to a repository and connect it with Vercel.
 
 All these options offer free hosting for static sites like this one.

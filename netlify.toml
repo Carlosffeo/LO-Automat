@@ -5,10 +5,6 @@
   # Explicitly set an empty build command as this is a static site
   command = "echo 'Static site - no build step required'"
 
-[build.environment]
-  # Set Node.js version explicitly
-  NODE_VERSION = "16"
-
 [[redirects]]
   # Single-page app fallback
   from = "/*"
