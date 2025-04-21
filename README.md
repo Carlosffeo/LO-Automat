@@ -1,6 +1,28 @@
 # Last Oasis Resource Calculator
 
-A simple web application for calculating the resources needed to craft equipment in the game Last Oasis.
+A simple static web application for calculating resources needed in the game Last Oasis.
+
+## Deployment
+
+This is a static HTML/CSS/JavaScript site with no build step required. Deployment should be straightforward:
+
+1. Clone the repository
+2. Deploy the files directly to a web server
+3. No build process or server-side code is needed
+
+## Structure
+
+- `index.html` - Main HTML file
+- `styles.css` - CSS styles
+- `script.js` - JavaScript functionality
+- `assets/` - Directory for images and other static assets
+
+## Netlify Configuration
+
+This project is configured for direct deployment on Netlify using the following files:
+
+- `netlify.toml` - Netlify configuration
+- `package.json` - Node.js version specification (for Netlify)
 
 ## Features
 
