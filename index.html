@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last Oasis Resource Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Last Oasis Resource Calculator</h1>
+        
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for items...">
+        </div>
+        
+        <div class="main-content">
+            <div class="equipment-selection">
+                <h2>Equipment Selection</h2>
+                
+                <div class="category-filters">
+                    <button class="category-filter active" data-category="all">All</button>
+                    <button class="category-filter" data-category="armor">Armor</button>
+                    <button class="category-filter" data-category="weapons">Weapons</button>
+                    <button class="category-filter" data-category="tools">Tools</button>
+                    <button class="category-filter" data-category="medical">Medical</button>
+                    <button class="category-filter" data-category="ammo">Ammunition</button>
+                    <button class="category-filter" data-category="walkers">Walkers</button>
+                </div>
+                
+                <div class="categories-container">
+                    <!-- Armor Category -->
+                    <div class="category" data-category="armor">
+                        <h3>Armor</h3>
+                        <div class="subcategory">
+                            <h4>Body Armor</h4>
+                            <div class="items">
+                                <div class="item">
+                                    <label>
+                                        <input type="checkbox" class="item-checkbox" data-item="redwood_armor">
+                                        Redwood Armor
+                                    </label>
+                                    <input type="number" min="0" value="0" class="item-quantity" data-item="redwood_armor">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subcategory">
+                            <h4>Boots</h4>
+                            <div class="items">
+                                <div class="item">
+                                    <label>
+                                        <input type="checkbox" class="item-checkbox" data-item="carapace_boots">
+                                        Carapace Boots
+                                    </label>
+                                    <input type="number" min="0" value="0" class="item-quantity" data-item="carapace_boots">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subcategory">
+                            <h4>Gauntlets</h4>
+                            <div class="items">
+                                <div class="item">
+                                    <label>
+                                        <input type="checkbox" class="item-checkbox" data-item="carapace_gauntlets">
+                                        Carapace Gauntlets
+                                    </label>
+                                    <input type="number" min="0" value="0" class="item-quantity" data-item="carapace_gauntlets">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ammunition Category -->
+                    <div class="category" data-category="ammo">
+                        <h3>Ammunition</h3>
+                        <div class="subcategory">
+                            <h4>Arrows & Bolts</h4>
+                            <div class="items">
+                                <div class="item">
+                                    <label>
+                                        <input type="checkbox" class="item-checkbox" data-item="ceramic_bolts">
+                                        Ceramic-Tipped Bolts
+                                    </label>
+                                    <input type="number" min="0" value="0" class="item-quantity" data-item="ceramic_bolts">
+                                </div>
+                                <div class="item">
+                                    <label>
+                                        <input type="checkbox" class="item-checkbox" data-item="fire_bolt">
+                                        Fire Bolt
+                                    </label>
+                                    <input type="number" min="0" value="0" class="item-quantity" data-item="fire_bolt">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Medical Category -->
+                    <div class="category" data-category="medical">
+                        <h3>Medical</h3>
+                        <div class="subcategory">
+                            <h4>Bandages</h4>
+                            <div class="items">
+                                <div class="item">
+                                    <label>
+                                        <input type="checkbox" class="item-checkbox" data-item="sterile_bandage">
+                                        Sterile Bandage
+                                    </label>
+                                    <input type="number" min="0" value="0" class="item-quantity" data-item="sterile_bandage">
+                                </div>
+                                <div class="item">
+                                    <label>
+                                        <input type="checkbox" class="item-checkbox" data-item="primitive_bandage">
+                                        Primitive Bandage
+                                    </label>
+                                    <input type="number" min="0" value="0" class="item-quantity" data-item="primitive_bandage">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tools Category -->
+                    <div class="category" data-category="tools">
+                        <h3>Tools</h3>
+                        <div class="subcategory">
+                            <h4>Repair Tools</h4>
+                            <div class="items">
+                                <div class="item">
+                                    <label>
+                                        <input type="checkbox" class="item-checkbox" data-item="chitin_repair_hammer">
+                                        Chitin Repair Hammer
+                                    </label>
+                                    <input type="number" min="0" value="0" class="item-quantity" data-item="chitin_repair_hammer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="actions">
+                    <button id="calculate-btn">Calculate Resources</button>
+                    <button id="reset-btn">Reset</button>
+                    <button id="save-loadout-btn">Save Loadout</button>
+                    <select id="loadout-select">
+                        <option value="">-- Select Loadout --</option>
+                        <option value="dinghy">Dinghy Loadout</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="results">
+                <h2>Required Resources</h2>
+                <div class="resources-list" id="resources-list">
+                    <!-- Resources will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 

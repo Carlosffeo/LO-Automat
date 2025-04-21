@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1a1a2e;
+    color: #e6e6e6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4cc9f0;
+    text-shadow: 0 0 5px rgba(76, 201, 240, 0.5);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #f72585;
+    border-bottom: 2px solid #f72585;
+    padding-bottom: 5px;
+}
+
+h3 {
+    margin: 15px 0;
+    color: #4361ee;
+}
+
+h4 {
+    margin: 10px 0;
+    color: #3a0ca3;
+    font-size: 1em;
+    padding-left: 10px;
+    border-left: 3px solid #3a0ca3;
+}
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e2eafc;
+    color: #333;
+    font-size: 16px;
+}
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.category-filter {
+    background-color: #0f3460;
+    color: #e6e6e6;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.category-filter:hover {
+    background-color: #1b4170;
+}
+
+.category-filter.active {
+    background-color: #4cc9f0;
+    color: #16213e;
+    font-weight: bold;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-filters {
+        justify-content: center;
+    }
+}
+
+.equipment-selection, .results {
+    background-color: #16213e;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.equipment-selection {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.categories-container {
+    margin-bottom: 20px;
+}
+
+.category {
+    margin-bottom: 25px;
+}
+
+.subcategory {
+    margin-bottom: 15px;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #0f3460;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.item:hover {
+    background-color: #1b4170;
+    transform: translateY(-2px);
+}
+
+.item label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item-checkbox {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.item-quantity {
+    width: 60px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: #e2eafc;
+    color: #333;
+    text-align: center;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+button {
+    background-color: #4cc9f0;
+    color: #16213e;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: #3db8df;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#calculate-btn {
+    background-color: #7209b7;
+    color: white;
+}
+
+#calculate-btn:hover {
+    background-color: #6008a6;
+}
+
+#reset-btn {
+    background-color: #e63946;
+    color: white;
+}
+
+#reset-btn:hover {
+    background-color: #d62b39;
+}
+
+#save-loadout-btn {
+    background-color: #38b000;
+    color: white;
+}
+
+#save-loadout-btn:hover {
+    background-color: #2d9600;
+}
+
+#loadout-select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e2eafc;
+    color: #333;
+}
+
+.resources-list {
+    margin-top: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.resource-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #0f3460;
+    border-radius: 5px;
+    animation: fadeIn 0.5s;
+}
+
+.resource-item:nth-child(odd) {
+    background-color: #1b4170;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
