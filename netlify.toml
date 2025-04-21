@@ -1,0 +1,10 @@
+[build]
+  # This is where Netlify should look for your site's files
+  publish = "."
+  
+  # No build command needed for this project
+  command = ""
+
+[build.environment]
+  # Set Node.js version explicitly
+  NODE_VERSION = "16" 
